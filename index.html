@@ -72,20 +72,20 @@
             <button class="chart-type-button">Wybierz rodzaj wykresu</button>
 
            <!-- Tabelka na dane -->
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th></th> <!-- Pusta komórka w lewym górnym rogu -->
-                        <!-- Kolumny dni od 1 do 31 -->
-                        ${Array.from({length: 31}, (_, i) => `<th>${i + 1}</th>`).join('')}
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>A</td>${'<td contenteditable="true"></td>'.repeat(31)}</tr>
-                    <tr><td>B</td>${'<td contenteditable="true"></td>'.repeat(31)}</tr>
-                    <tr><td>C</td>${'<td contenteditable="true"></td>'.repeat(31)}</tr>
-                </tbody>
-            </table>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th></th> <!-- Pusta komórka w lewym górnym rogu -->
+                    <!-- Kolumny dni od 1 do 31 -->
+                    ${Array.from({length: 31}, (_, i) => `<th>${i + 1}</th>`).join('')}
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>A</td>${'<td contenteditable="true"></td>'.repeat(31)}</tr>
+                <tr><td>B</td>${'<td contenteditable="true"></td>'.repeat(31)}</tr>
+                <tr><td>C</td>${'<td contenteditable="true"></td>'.repeat(31)}</tr>
+            </tbody>
+        </table>
         </div>
     </div>
 
