@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Wskaźników</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Górny pasek nawigacyjny -->
+    <header class="top-bar">
+        <button class="top-button">Dodaj wykres</button>
+        <button class="top-button">Ustawienia</button>
+        <button class="top-button">Pomoc</button>
+    </header>
+
+    <!-- Główna sekcja widoku i menu boczne -->
+    <div class="main-container">
+        <!-- Główna sekcja wyświetlania wskaźników -->
+        <section class="view-section" id="viewSection">
+            <!-- Przykładowy wykres z możliwością zmiany poziomu oraz przyciskiem "X" -->
+            <div class="chart level-1" data-level="1">
+                <button class="close-button">X</button>
+                <div class="chart-header">
+                    Wykres poziom 1
+                    <select class="level-selector">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu boczne po prawej stronie -->
+        <aside class="side-menu">
+            <h2>Wszystkie wykresy</h2>
+            <div class="chart-icon-container" id="chartIcons">
+                <!-- Dodajemy 10 miniaturek wykresów do menu bocznego -->
+                <div class="chart-icon">Wykres 1</div>
+                <div class="chart-icon">Wykres 2</div>
+                <div class="chart-icon">Wykres 3</div>
+                <div class="chart-icon">Wykres 4</div>
+                <div class="chart-icon">Wykres 5</div>
+                <div class="chart-icon">Wykres 6</div>
+                <div class="chart-icon">Wykres 7</div>
+                <div class="chart-icon">Wykres 8</div>
+                <div class="chart-icon">Wykres 9</div>
+                <div class="chart-icon">Wykres 10</div>
+                <div class="chart-icon">Wykres 11</div>
+                <div class="chart-icon">Wykres 12</div>
+                <div class="chart-icon">Wykres 13</div>
+                <div class="chart-icon">Wykres 14</div>
+                <div class="chart-icon">Wykres 15</div>
+                <div class="chart-icon">Wykres 16</div>
+                <div class="chart-icon">Wykres 17</div>
+                <div class="chart-icon">Wykres 18</div>
+                <div class="chart-icon">Wykres 19</div>
+                <div class="chart-icon">Wykres 20</div>
+            </div>
+        </aside>
+
+        <!-- Wysuwane menu z prawej strony -->
+        <div class="slide-out-panel" id="slideOutPanel">
+            <button class="close-panel-button" id="closePanelButton">X</button>
+            <h3>TYTUŁ WYKRESU</h3>
+            <input type="text" placeholder="Wprowadź tytuł wykresu">
+            <h4>Krótki opis</h4>
+            <textarea placeholder="Wprowadź krótki opis wykresu"></textarea>
+            <h4>Link do danych</h4>
+            <input type="url" placeholder="Wprowadź link do danych">
+            <button class="chart-type-button">Wybierz rodzaj wykresu</button>
+
+           <!-- Tabelka na dane -->
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th></th> <!-- Pusta komórka w lewym górnym rogu -->
+                        <!-- Kolumny dni od 1 do 31 -->
+                        ${Array.from({length: 31}, (_, i) => `<th>${i + 1}</th>`).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>A</td>${'<td contenteditable="true"></td>'.repeat(31)}</tr>
+                    <tr><td>B</td>${'<td contenteditable="true"></td>'.repeat(31)}</tr>
+                    <tr><td>C</td>${'<td contenteditable="true"></td>'.repeat(31)}</tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
